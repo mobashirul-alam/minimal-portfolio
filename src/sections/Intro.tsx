@@ -1,36 +1,21 @@
 "use client";
 
-import { stagger, useAnimate, useInView } from "motion/react";
-import { FC, useEffect } from "react";
-import SplitType from "split-type";
+import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
+import { useInView } from "motion/react";
+import { FC, useEffect, useRef } from "react";
 
 const Intro: FC = () => {
-  const [introScope, introAnimate] = useAnimate();
+  const introScope = useRef<HTMLDivElement>(null);
+  const { scope, entranceAnimation } = useTextRevealAnimation();
   const inView = useInView(introScope, {
     once: true,
   });
 
   useEffect(() => {
-    new SplitType(introScope.current.querySelector("h2"), {
-      types: "lines,words",
-      tagName: "span",
-    });
-  }, [introScope]);
-
-  useEffect(() => {
     if (inView) {
-      introAnimate(
-        introScope.current.querySelectorAll(".word"),
-        {
-          transform: "translateY(0)",
-        },
-        {
-          duration: 0.5,
-          delay: stagger(0.18),
-        }
-      );
+      entranceAnimation();
     }
-  }, [inView, introAnimate, introScope]);
+  }, [inView, entranceAnimation]);
 
   return (
     <section
@@ -39,7 +24,7 @@ const Intro: FC = () => {
       ref={introScope}
     >
       <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:text-8xl lg:w-[80%]">
+        <h2 className="text-4xl md:text-7xl lg:text-8xl lg:w-[80%]" ref={scope}>
           Building beautiful websites with clean code and thoughtful design to
           help your business grow and stand out from the competition.
         </h2>

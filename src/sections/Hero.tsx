@@ -2,22 +2,16 @@
 
 import Image from "next/image";
 import { FC, useEffect, useRef } from "react";
-/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 
 import heroImage from "@/assets/images/hero-image.jpg";
 import Button from "@/components/Button";
-import {
-  motion,
-  stagger,
-  useAnimate,
-  useScroll,
-  useTransform,
-} from "motion/react";
-import SplitType from "split-type";
+import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
+import { motion, useScroll, useTransform } from "motion/react";
 
 const Hero: FC = () => {
-  const [titleScope, titleAnimate] = useAnimate();
   const scrollingDiv = useRef<HTMLDivElement>(null);
+  const { scope: titleScope, entranceAnimation: titleAnimate } =
+    useTextRevealAnimation();
 
   const { scrollYProgress } = useScroll({
     target: scrollingDiv,
@@ -27,19 +21,8 @@ const Hero: FC = () => {
   const portraitWidth = useTransform(scrollYProgress, [0, 1], ["100%", "240%"]);
 
   useEffect(() => {
-    new SplitType(titleScope.current, {
-      types: "lines,words",
-      tagName: "span",
-    });
-
-    titleAnimate(
-      titleScope.current.querySelectorAll(".word"),
-      {
-        transform: "translateY(0)",
-      },
-      { duration: 0.5, delay: stagger(0.2) }
-    );
-  }, [titleAnimate, titleScope]);
+    titleAnimate();
+  }, [titleAnimate]);
 
   return (
     <section>
