@@ -1,8 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Minimal Single Page Portfolio
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-14.2.18-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-blue)
 
-First, run the development server:
+A modern, animated single-page portfolio website built with Next.js, featuring smooth animations, responsive design, and a clean minimal aesthetic. Perfect for showcasing your work with style.
+
+## ✨ Features
+
+- **Animated Text Reveals** - Engaging text animations using SplitType and Motion One
+- **Responsive Design** - Fully responsive layout that works on all devices
+- **Project Showcase** - Interactive project gallery with hover effects
+- **Testimonials Section** - Customer testimonials with a smooth carousel
+- **FAQ Accordion** - Animated frequently asked questions section
+- **Custom Components** - Reusable UI components including buttons and cards
+- **Modern Stack** - Built with Next.js 14, TypeScript, and TailwindCSS
+- **Performance Optimized** - Fast loading with optimized images and fonts
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [TailwindCSS](https://tailwindcss.com/)
+- **Animation**:
+  - [Motion One](https://motion.dev/)
+  - [SplitType](https://split-type.js.org/)
+- **Image Optimization**: [Sharp](https://sharp.pixelplumbing.com/)
+- **Utilities**: [tailwind-merge](https://github.com/dcastil/tailwind-merge)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm/yarn/pnpm
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/mobashirul-alam/minimal-portfolio.git
+cd minimal-portfolio
+```
+
+2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Start the development server
 
 ```bash
 npm run dev
@@ -10,27 +62,45 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) to view the website
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                # Next.js app directory
+│   ├── layout.tsx     # Root layout with Archivo font
+│   ├── page.tsx       # Home page
+│   └── globals.css    # Global styles
+├── assets/            # Static assets
+│   ├── icons/         # SVG icons
+│   └── images/        # Project and testimonial images
+├── components/        # Reusable components
+├── hooks/             # Custom React hooks
+├── sections/          # Main page sections
+└── utils/            # Utility functions
+```
 
-## Learn More
+## 🎨 Design Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Typography**: Uses the Archivo variable font for a modern, clean look
+- **Color Scheme**: Clean and minimal with a stone color palette
+- **Animations**: Smooth text reveals and transitions
+- **Layout**: Responsive grid system with proper spacing
+- **Components**: Modular and reusable design system
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is ready to be deployed on [Vercel](https://vercel.com). For the easiest deployment experience:
 
-## Deploy on Vercel
+1. Push your code to a GitHub repository
+2. Import your project to Vercel
+3. Your site will be automatically deployed
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👤 Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Mobashirul Alam**
+
+- GitHub: [@mobashirul-alam](https://github.com/mobashirul-alam)
