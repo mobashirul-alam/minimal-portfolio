@@ -6,7 +6,7 @@
 
 A modern, animated single-page portfolio website built with Next.js, featuring smooth animations, responsive design, and a clean minimal aesthetic. Perfect for showcasing your work with style.
 
-[Visit Live Portfolio](https://minimal-portfolio-sandy.vercel.app/)
+<a href="https://minimal-portfolio-sandy.vercel.app/" target="_blank">Visit Live Portfolio</a>
 
 ## ✨ Features
 
